@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+header {
+    display: flex;
+    height: 5 0px;
+    background: #2B55E5;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+.logo {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+ }
