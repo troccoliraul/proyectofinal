@@ -9,6 +9,9 @@ import { ListEducationComponent } from './education/list-education/list-educatio
 import { ListHeaderComponent } from './header/list-header/list-header.component';
 import { EditHeaderComponent } from './header/edit-header/edit-header.component';
 import { AddHeaderComponent } from './header/add-header/add-header.component';
+import { ListAboutComponent } from './about/list-about/list-about.component';
+import { AddAboutComponent } from './about/add-about/add-about.component';
+import { EditAboutComponent } from './about/edit-about/edit-about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { AddHeaderComponent } from './header/add-header/add-header.component';
     ListEducationComponent,
     ListHeaderComponent,
     EditHeaderComponent,
-    AddHeaderComponent
+    AddHeaderComponent,
+    ListAboutComponent,
+    AddAboutComponent,
+    EditAboutComponent
   ],
   imports: [
     BrowserModule,

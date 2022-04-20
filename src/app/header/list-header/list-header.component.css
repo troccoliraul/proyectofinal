@@ -21,3 +21,16 @@ header {
   height: 60px;
   margin-right: 10px;
  }
+
+.baner {
+  min-height: 600px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  max-width: auto;
+}
+
+.baner img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
