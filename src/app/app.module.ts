@@ -12,6 +12,11 @@ import { AddHeaderComponent } from './header/add-header/add-header.component';
 import { ListAboutComponent } from './about/list-about/list-about.component';
 import { AddAboutComponent } from './about/add-about/add-about.component';
 import { EditAboutComponent } from './about/edit-about/edit-about.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,10 @@ import { EditAboutComponent } from './about/edit-about/edit-about.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

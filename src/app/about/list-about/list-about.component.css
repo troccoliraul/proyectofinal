@@ -4,13 +4,20 @@
 
 .cover {
   background-image: url(https://miro.medium.com/max/560/1*3Ic8Hfm9Oj1VXpvUXNYs_w.png);
-  background-size: cover;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
-body {
-  background: #654ea3;
-  background: linear-gradient(to right, #e96443, #904e95);
-  min-height: 100vh;
-  overflow-x: hidden
+.location {
+  text-align: right;
+  display: flex;
+}
+
+.color{
+  color: black;
+}
+
+.edit {
+  margin-bottom: 10px;
+  align-items: right;
 }

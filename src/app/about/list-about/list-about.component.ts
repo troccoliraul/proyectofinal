@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EditaboutService } from 'src/app/services/editabout.service';
 
 @Component({
   selector: 'app-list-about',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListAboutComponent implements OnInit {
 
-  constructor() { }
+  modalSwtch: boolean | undefined;
 
-  ngOnInit(): void {
+  constructor(private modalSS: EditaboutService) { }
+
+  ngOnInit(){
+
+    this.modalSS.$modal.subscribe((valor)=> {this.modalSwtch = valor;})
+
+  }
+
+  editAbout(){
+    this.modalSwtch = true;
   }
 
 }
