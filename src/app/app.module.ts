@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddExperienceComponent } from './experience/add-experience/add-experience.component';
 import { EditExperienceComponent } from './experience/edit-experience/edit-experience.component';
 import { ListExperienceComponent } from './experience/list-experience/list-experience.component';
+import { ListHssComponent } from './hss/list-hss/list-hss.component';
 
 
 
@@ -35,7 +36,8 @@ import { ListExperienceComponent } from './experience/list-experience/list-exper
     EditAboutComponent,
     AddExperienceComponent,
     EditExperienceComponent,
-    ListExperienceComponent
+    ListExperienceComponent,
+    ListHssComponent
   ],
   imports: [
     BrowserModule,
