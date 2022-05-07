@@ -15,6 +15,9 @@ import { EditAboutComponent } from './about/edit-about/edit-about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddExperienceComponent } from './experience/add-experience/add-experience.component';
+import { EditExperienceComponent } from './experience/edit-experience/edit-experience.component';
+import { ListExperienceComponent } from './experience/list-experience/list-experience.component';
 
 
 
@@ -29,7 +32,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddHeaderComponent,
     ListAboutComponent,
     AddAboutComponent,
-    EditAboutComponent
+    EditAboutComponent,
+    AddExperienceComponent,
+    EditExperienceComponent,
+    ListExperienceComponent
   ],
   imports: [
     BrowserModule,
