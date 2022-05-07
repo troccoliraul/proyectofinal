@@ -19,6 +19,8 @@ import { AddExperienceComponent } from './experience/add-experience/add-experien
 import { EditExperienceComponent } from './experience/edit-experience/edit-experience.component';
 import { ListExperienceComponent } from './experience/list-experience/list-experience.component';
 import { ListHssComponent } from './hss/list-hss/list-hss.component';
+import { AddProjectComponent } from './projects/add-project/add-project.component';
+import { ListProjectComponent } from './projects/list-project/list-project.component';
 
 
 
@@ -37,7 +39,9 @@ import { ListHssComponent } from './hss/list-hss/list-hss.component';
     AddExperienceComponent,
     EditExperienceComponent,
     ListExperienceComponent,
-    ListHssComponent
+    ListHssComponent,
+    AddProjectComponent,
+    ListProjectComponent
   ],
   imports: [
     BrowserModule,
