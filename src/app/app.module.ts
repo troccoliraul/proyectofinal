@@ -21,6 +21,8 @@ import { ListExperienceComponent } from './experience/list-experience/list-exper
 import { ListHssComponent } from './hss/list-hss/list-hss.component';
 import { AddProjectComponent } from './projects/add-project/add-project.component';
 import { ListProjectComponent } from './projects/list-project/list-project.component';
+import { ListLoginComponent } from './login/list-login/list-login.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -41,7 +43,9 @@ import { ListProjectComponent } from './projects/list-project/list-project.compo
     ListExperienceComponent,
     ListHssComponent,
     AddProjectComponent,
-    ListProjectComponent
+    ListProjectComponent,
+    ListLoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

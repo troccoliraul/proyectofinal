@@ -1,0 +1,45 @@
+<div class="container"><div>
+  <app-list-header></app-list-header></div>
+
+  <div>
+    <app-list-about></app-list-about>
+  </div>
+  <br>
+
+  <div>
+    <app-list-education></app-list-education>
+  </div>
+  <br>
+
+  <div class="bg-white shadow rounded overflow-hidden">
+    <div _ngcontent-mee-c50="" class="px-4 py-3 container add">
+      <h3 _ngcontent-mee-c50="" >Experience</h3>
+      <div class="form-inline">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addexperience">
+          <i class="bi bi-file-earmark-plus"></i>
+        </button>
+        <app-add-experience></app-add-experience>
+      </div>
+    </div>
+    <app-list-experience></app-list-experience>
+  </div>
+  <br>
+
+  <div>
+    <app-list-hss></app-list-hss>
+  </div>
+
+  <div class="bg-white shadow rounded overflow-hidden">
+    <div _ngcontent-mee-c50="" class="px-4 py-3">
+      <h3 _ngcontent-mee-c50="" class="mb-0">Projects</h3>
+      <div class="btn-sm btn-outline" align="right">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addproject">
+          <i class="bi bi-file-earmark-plus"></i>
+        </button>
+        <app-add-project></app-add-project>
+      </div>
+    </div>
+    <app-list-project></app-list-project>
+  </div>
+
+</div>

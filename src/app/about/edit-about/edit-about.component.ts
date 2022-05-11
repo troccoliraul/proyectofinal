@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EditaboutService } from 'src/app/services/editabout.service'
 
 @Component({
   selector: 'app-edit-about',
@@ -8,17 +7,7 @@ import { EditaboutService } from 'src/app/services/editabout.service'
 })
 export class EditAboutComponent implements OnInit {
 
-  constructor(private modalSS: EditaboutService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-
-  closeModal(){
-    this.modalSS.$modal.emit(false);
-
-  }
-
-
-
-}
+  }}
