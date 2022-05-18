@@ -23,6 +23,8 @@ import { AddProjectComponent } from './projects/add-project/add-project.componen
 import { ListProjectComponent } from './projects/list-project/list-project.component';
 import { ListLoginComponent } from './login/list-login/list-login.component';
 import { HomeComponent } from './home/home.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -53,6 +55,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

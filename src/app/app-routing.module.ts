@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'addabout', component: AddAboutComponent},
   {path: 'listabout', component: ListAboutComponent},
   {path: 'addeducation', component: AddEducationComponent},
-  {path: 'editeducation', component: EditEducationComponent},
+  {path: 'editeducation/:id', component: EditEducationComponent},
   {path: 'listeducation', component: ListEducationComponent},
   {path: 'addexperience', component: AddExperienceComponent},
   {path: 'editexperience', component: EditExperienceComponent},
@@ -37,6 +37,7 @@ const routes: Routes = [
   {path: 'listlogin', component: ListLoginComponent},
   {path: 'listproject', component: ListProjectComponent},
   {path: 'addproject', component: AddProjectComponent},
+  {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({
