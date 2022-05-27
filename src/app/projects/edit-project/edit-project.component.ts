@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Experience } from 'src/app/models/experience/experience.module';
-import { ExperienceService } from 'src/app/services/experience.service';
+import { Project } from 'src/app/models/projects/projects.module';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
-  selector: 'app-edit-experience',
-  templateUrl: './edit-experience.component.html',
-  styleUrls: ['./edit-experience.component.css']
+  selector: 'app-edit-project',
+  templateUrl: './edit-project.component.html',
+  styleUrls: ['./edit-project.component.css']
 })
-export class EditExperienceComponent implements OnInit {
+export class EditProjectComponent implements OnInit {
 
-  experience: Experience = null;
+  project: Project = null;
 
   constructor(
-    private toastr: ToastrService,
-    private router: Router,
-    private experienceService: ExperienceService,
+    private projectsService: ProjectsService,
     private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params.id;
-    this.experienceService.detail(id).subscribe(
+    this.projectsService.detail(id).subscribe(
       data => {
-        this.experience = data;
+        this.project = data;
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
@@ -37,7 +37,7 @@ export class EditExperienceComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params.id;
-    this.experienceService.update(id, this.experience).subscribe(
+    this.projectsService.update(id, this.project).subscribe(
       data => {
 
         this.router.navigate(['/']);

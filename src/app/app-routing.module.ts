@@ -10,11 +10,11 @@ import { AddExperienceComponent } from './experience/add-experience/add-experien
 import { EditExperienceComponent } from './experience/edit-experience/edit-experience.component';
 import { ListExperienceComponent } from './experience/list-experience/list-experience.component';
 import { ListHeaderComponent } from './header/list-header/list-header.component';
-import { EditHeaderComponent } from './header/edit-header/edit-header.component';
 import { ListHssComponent } from './hss/list-hss/list-hss.component';
 import { ListLoginComponent } from './login/list-login/list-login.component';
 import { ListProjectComponent } from './projects/list-project/list-project.component';
 import { AddProjectComponent } from './projects/add-project/add-project.component';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component'
 import { HomeComponent } from './home/home.component';
 
 
@@ -22,21 +22,21 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
 
   {path: '', component: HomeComponent},
-  {path: 'editabout', component: EditAboutComponent},
+  {path: 'editabout/:id', component: EditAboutComponent},
   {path: 'addabout', component: AddAboutComponent},
   {path: 'listabout', component: ListAboutComponent},
   {path: 'addeducation', component: AddEducationComponent},
   {path: 'editeducation/:id', component: EditEducationComponent},
   {path: 'listeducation', component: ListEducationComponent},
   {path: 'addexperience', component: AddExperienceComponent},
-  {path: 'editexperience', component: EditExperienceComponent},
+  {path: 'editexperience/:id', component: EditExperienceComponent},
   {path: 'listexperience', component: ListExperienceComponent},
   {path: 'listheader', component: ListHeaderComponent},
   {path: 'listhss', component: ListHssComponent},
-  {path: 'editheader', component: EditHeaderComponent},
   {path: 'listlogin', component: ListLoginComponent},
   {path: 'listproject', component: ListProjectComponent},
   {path: 'addproject', component: AddProjectComponent},
+  {path: 'editproject/:id', component: EditProjectComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

@@ -25,6 +25,7 @@ import { ListLoginComponent } from './login/list-login/list-login.component';
 import { HomeComponent } from './home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component';
 
 
 
@@ -47,7 +48,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddProjectComponent,
     ListProjectComponent,
     ListLoginComponent,
-    HomeComponent
+    HomeComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

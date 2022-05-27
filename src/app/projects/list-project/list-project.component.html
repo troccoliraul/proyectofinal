@@ -1,7 +1,31 @@
 <div _ngcontent-mee-c50="" class="px-4 py-3">
   <div _ngcontent-mee-c50="" class="p-4 rounded shadow-sm bg-light">
-    <p _ngcontent-mee-c50="" class="font-italic mb-0">Web Developer</p>
-    <p _ngcontent-mee-c50="" class="font-italic mb-0">Lives in New York</p>
-    <p _ngcontent-mee-c50="" class="font-italic mb-0">Photographer</p>
+    <div _ngcontent-mee-c50="" class="table table-white">
+      <thead>
+        <tr>
+          <th scope="col">Proyecto</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Direccion de Proyecto</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{project.proyecto}}</td>
+          <td>{{project.descripcion}}</td>
+          <td>{{project.url_proyecto}}</td>
+
+
+
+          <td><button class="btn btn-outline-warning" routerLink="editproject/{{project.id}}"><i class="bi bi-pencil-fill"></i></button></td>
+
+          <td><button class="btn btn-outline-danger" (click)="alert()"><i class="bi bi-trash3-fill"></i></button></td>
+
+        </tr>
+
+
+      </tbody>
+    </div>
   </div>
 </div>

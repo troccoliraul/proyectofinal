@@ -1,63 +1,33 @@
-<div class="modal fade" id="addexperience" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">New Experience</h5>
-        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
-          <i class="bi bi-x-lg"></i>
-        </button>
+<div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label for="nom_empresa">Nombre de Empresa</label>
+          <input type="text" class="form-control" id="nom_empresa" name="nom_empresa"
+          [(ngModel)]="nom_empresa" required>
       </div>
-      <div class="modal-body">
-          <div class="measures">
-            <div class="card-body">
-              <div class="row mb-3">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Full Name</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <input type="text" class="form-control" value="">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Email</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <input type="text" class="form-control" value="">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Phone</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <input type="text" class="form-control" value="">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Mobile</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <input type="text" class="form-control" value="">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Address</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <input type="text" class="form-control" value="">
-                </div>
-              </div>
-            </div>
-          </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="form-group">
+          <label for="fecha_inicio">Fecha de Inicio</label>
+          <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio"
+          [(ngModel)]="fecha_inicio" required>
       </div>
-    </div>
-  </div>
+      <div class="form-group">
+          <label for="fecha_fin">Fecha de Finalizacion</label>
+          <input type="text" class="form-control" id="fecha_fin" name="fecha_fin"
+          [(ngModel)]="fecha_fin" required>
+      </div>
+      <div class="form-group">
+          <label for="descripcion">Descripcion</label>
+          <input type="text" class="form-control" id="descripcion" name="descripcion"
+          [(ngModel)]="descripcion" required>
+      </div>
+      <div class="form-group">
+        <label for="trabajo_actual">Trabajo Actual?</label>
+        <input type="text" class="form-control" id="trabajo_actual" name="trabajo_actual"
+        [(ngModel)]="trabajo_actual" required>
+      </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+                <button type="button" class="btn btn-secondary" routerLink="/">Close</button>
+              </form>
+        </div>
 </div>
-
-

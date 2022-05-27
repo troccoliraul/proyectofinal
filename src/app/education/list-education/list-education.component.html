@@ -1,9 +1,6 @@
 <div _ngcontent-mee-c50="" class="px-4 py-3">
-  <div class="btn-sm btn-outline" align="right">
-
-  </div>
-<div>
-  <div _ngcontent-mee-c50="" class="">
+<div _ngcontent-mee-c50="" class="p-4 rounded shadow-sm bg-light">
+  <div _ngcontent-mee-c50="" class="table table-white">
     <thead>
       <tr>
         <th scope="col">Centro</th>
@@ -21,12 +18,9 @@
         <td>{{education.anio_egreso}}</td>
 
 
-        <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editeducation" routerLink="/editeducation/{{education.id}}">
-          <i class="bi bi-pencil-fill"></i>
-        </button></td>
-        <app-edit-education></app-edit-education>
+        <td><button class="btn btn-outline-warning" routerLink="editeducation/{{education.id}}"><i class="bi bi-pencil-fill"></i></button></td>
 
-        <td><button class="btn btn-outline-danger" (click)="borrar(education.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+        <td><button class="btn btn-outline-danger" (click)="alert()"><i class="bi bi-trash3-fill"></i></button></td>
 
       </tr>
 
@@ -35,5 +29,3 @@
   </div>
 </div>
 </div>
-
-<app-edit-education></app-edit-education>

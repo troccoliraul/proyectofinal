@@ -1,13 +1,5 @@
-<div class="modal fade" id="addeducation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">New Educaction</h5>
-        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
-          <i class="bi bi-x-lg"></i>
-        </button>
-      </div>
-      <div class="modal-body">
+<div class="row mt-5">
+  <div class="col-md-4 mx-auto">
         <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
           <div class="form-group">
               <label for="centro">Centro</label>
@@ -29,12 +21,8 @@
               <input type="text" class="form-control" id="anio_egreso" name="anio_egreso"
               [(ngModel)]="anio_egreso" required>
           </div>
+          <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+          <button type="button" class="btn btn-secondary" routerLink="/">Close</button>
         </form>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Save changes</button>
-      </div>
-    </div>
   </div>
 </div>
-
