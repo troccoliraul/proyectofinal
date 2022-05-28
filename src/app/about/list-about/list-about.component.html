@@ -1,27 +1,35 @@
+<div *ngFor="let about of abouts">
 <div class="bg-white shadow rounded overflow-hidden">
-  <div class="px-4 pt-0 pb-4 cover">
+  <div class="px-4 pt-0 pb-4">
+    <img src={{about.url_img}} class="cover">
+    <div class="up">
       <div class="media align-items-end ">
           <div class="profile mr-3 profile-head">
-            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+            <img src={{about.url_foto}} alt="..." width="130" class="rounded mb-2 img-thumbnail">
             <div class="media-body mb-5 text-white">
-              <h4 class="mt-0 mb-0 color">Mark Williams</h4>
-              <p class="small mb-4 color"> <i class="fas fa-map-marker-alt mr-2"></i>New York</p>
+              <h4 class="mt-0 mb-0 color">{{about.apellido}} {{about.nombre}}</h4>
             </div>
-          </div>
        </div>
     </div>
     <div class="btn-sm btn-outline" align="right">
-      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
-        <i class="bi bi-pencil-fill"></i>
-      </button>
-      <app-edit-about></app-edit-about>
+      <button class="btn btn-outline-warning" routerLink="editabout/{{about.id}}"><i class="bi bi-pencil-fill"></i></button>
     </div>
-  <div class="px-4 py-3">
-      <h5 class="mb-0">About</h5>
-      <div class="p-4 rounded shadow-sm bg-light">
-          <p class="font-italic mb-0">Web Developer</p>
-          <p class="font-italic mb-0">Lives in New York</p>
-          <p class="font-italic mb-0">Photographer</p>
+        <div class="px-4 py-3">
+            <h5 class="mb-0">Mis Datos:</h5>
+              <div class="p-4 rounded shadow-sm bg-light">
+                <p class="font-italic mb-0">Domicilio: {{about.domicilio}}</p>
+                <p class="font-italic mb-0">Fecha de Nacimiento: {{about.fecha_nacimiento}}</p>
+                <p class="font-italic mb-0">Telefono: {{about.telefono}}</p>
+                <p class="font-italic mb-0">Correo: {{about.correo}}</p>
+                <p class="font-italic mb-0">Idiomas: {{about.idioma}}</p>
+              </div>
+        </div>
+        <div class="px-4 py-3">
+          <h5 class="mb-0">Sobre Mi:</h5>
+          <div class="p-4 rounded shadow-sm bg-light">
+                <p class="font-italic mb-0">{{about.sobre_mi}}</p>
+          </div>
       </div>
-  </div>
+    </div>
+</div>
 </div>

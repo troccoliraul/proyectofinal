@@ -1,7 +1,7 @@
-      <div *ngIf="experience">
-        <div class="row mt-5">
-            <div class="col-md-4 mx-auto">
-                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+ <div *ngIf="experience">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                     <div class="form-group">
                         <label for="nom_empresa">Nombre de Empresa</label>
                         <input type="text" class="form-control" id="nom_empresa" name="nom_empresa"
@@ -27,9 +27,9 @@
                       <input type="text" class="form-control" id="trabajo_actual" name="trabajo_actual"
                       [(ngModel)]="experience.trabajo_actual" required>
                   </div>
-                    <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
-                    <button type="button" class="btn btn-secondary" routerLink="/">Close</button>
-                </form>
-            </div>
-        </div>
+        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+        <button type="button" class="btn btn-secondary" routerLink="/">Close</button>
+      </form>
+    </div>
+  </div>
 </div>
