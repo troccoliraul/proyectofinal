@@ -31,7 +31,7 @@ export class EditEducationComponent implements OnInit {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     );
   }
@@ -41,11 +41,11 @@ export class EditEducationComponent implements OnInit {
     this.educacionService.update(id, this.education).subscribe(
       data => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       err => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     );
   }

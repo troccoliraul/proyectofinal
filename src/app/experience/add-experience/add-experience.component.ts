@@ -31,11 +31,11 @@ export class AddExperienceComponent implements OnInit {
     this.experienceService.save(experience).subscribe(
       data => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       err => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     );
   }

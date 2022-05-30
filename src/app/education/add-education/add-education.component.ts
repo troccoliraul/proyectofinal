@@ -30,11 +30,11 @@ export class AddEducationComponent implements OnInit {
     this.educacionService.save(educacion).subscribe(
       data => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       err => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     );
   }

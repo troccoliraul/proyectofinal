@@ -21,23 +21,23 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 
-  {path: '', component: HomeComponent},
-  {path: 'editabout/:id', component: EditAboutComponent},
-  {path: 'addabout', component: AddAboutComponent},
-  {path: 'listabout', component: ListAboutComponent},
-  {path: 'addeducation', component: AddEducationComponent},
-  {path: 'editeducation/:id', component: EditEducationComponent},
-  {path: 'listeducation', component: ListEducationComponent},
-  {path: 'addexperience', component: AddExperienceComponent},
-  {path: 'editexperience/:id', component: EditExperienceComponent},
-  {path: 'listexperience', component: ListExperienceComponent},
-  {path: 'listheader', component: ListHeaderComponent},
-  {path: 'listhss', component: ListHssComponent},
-  {path: 'listlogin', component: ListLoginComponent},
-  {path: 'listproject', component: ListProjectComponent},
-  {path: 'addproject', component: AddProjectComponent},
-  {path: 'editproject/:id', component: EditProjectComponent},
-  {path: '**', redirectTo: '', pathMatch: 'full'}
+  {path: 'home', component: HomeComponent},
+  {path: 'home/editabout/:id', component: EditAboutComponent},
+  {path: 'home/addabout', component: AddAboutComponent},
+  {path: 'home/listabout', component: ListAboutComponent},
+  {path: 'home/addeducation', component: AddEducationComponent},
+  {path: 'home/editeducation/:id', component: EditEducationComponent},
+  {path: 'home/listeducation', component: ListEducationComponent},
+  {path: 'home/addexperience', component: AddExperienceComponent},
+  {path: 'home/editexperience/:id', component: EditExperienceComponent},
+  {path: 'home/listexperience', component: ListExperienceComponent},
+  {path: 'home/listheader', component: ListHeaderComponent},
+  {path: 'home/listhss', component: ListHssComponent},
+  {path: 'login', component: ListLoginComponent},
+  {path: 'home/listproject', component: ListProjectComponent},
+  {path: 'home/addproject', component: AddProjectComponent},
+  {path: 'home/editproject/:id', component: EditProjectComponent},
+  {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({

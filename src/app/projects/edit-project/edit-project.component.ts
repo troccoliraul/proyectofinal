@@ -30,7 +30,7 @@ export class EditProjectComponent implements OnInit {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     );
   }
@@ -40,11 +40,11 @@ export class EditProjectComponent implements OnInit {
     this.projectsService.update(id, this.project).subscribe(
       data => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       err => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     );
   }

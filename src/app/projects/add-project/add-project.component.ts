@@ -29,11 +29,11 @@ export class AddProjectComponent implements OnInit {
     this.projectsService.save(project).subscribe(
       data => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       err => {
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     );
   }
