@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Education } from 'src/app/models/education/education.module';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { ToastrService } from 'ngx-toastr';
+import { TokenService } from '../../services/token.service';
 import Swal from 'sweetalert2'
 
 
@@ -13,17 +14,26 @@ import Swal from 'sweetalert2'
 export class ListEducationComponent implements OnInit {
 
   educations: Education[] = [];
+  roles: string[];
+  isAdmin = false;
 
   constructor(
     private educacionService: EducacionService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit() {
-    this.cargarEducacion();
+    this.cargarProductos();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
-  cargarEducacion(): void {
+  cargarProductos(): void {
     this.educacionService.lista().subscribe(
       data => {
         this.educations = data;
@@ -37,11 +47,15 @@ export class ListEducationComponent implements OnInit {
   borrar(id: number) {
     this.educacionService.delete(id).subscribe(
       data => {
-
-        this.cargarEducacion();
+        this.toastr.success('Producto Eliminado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.cargarProductos();
       },
       err => {
-
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000, positionClass: 'toast-top-center',
+        });
       }
     );
   }

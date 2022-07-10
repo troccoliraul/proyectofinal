@@ -7,8 +7,11 @@
       <button class="btn btn-sm btn-outline-secondary" type="button" onclick="window.location='https://github.com/troccoliraul'"><i class="bi bi-github"></i></button>
       <button class="btn btn-sm btn-outline-secondary" type="button" onclick="window.location='https://www.facebook.com/raul.troccoli'"><i class="bi bi-facebook"></i></button>
       <button class="btn btn-sm btn-outline-secondary" type="button" onclick="window.location='https://www.linkedin.com/in/raul-troccoli-58554998/'"><i class="bi bi-linkedin"></i></button>
-      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#login" routerLink="/login">
-        Login
+      <button class="btn btn-sm btn-outline-success" type="button" *ngIf="!isLogged">
+        <a routerLink="/login"><i class="bi bi-box-arrow-in-right"></i></a>
+      </button>
+      <button class="btn btn-sm btn-outline-dark" type="button" *ngIf="isLogged" (click)="onLogOut()" routerLink="/login">
+        <a style="cursor: pointer;"><i class="bi bi-box-arrow-right"></i></a>
       </button>
     </form>
 </header>

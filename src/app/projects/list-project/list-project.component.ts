@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { Project } from 'src/app/models/projects/projects.module';
 import { ProjectsService } from 'src/app/services/projects.service';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-list-project',
@@ -12,17 +13,26 @@ import { ProjectsService } from 'src/app/services/projects.service';
 export class ListProjectComponent implements OnInit {
 
   projects: Project[] = [];
+  roles: string[];
+  isAdmin = false;
 
   constructor(
     private projectsService: ProjectsService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit() {
-    this.cargarProyecto();
+    this.cargarProductos();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
-  cargarProyecto(): void {
+  cargarProductos(): void {
     this.projectsService.lista().subscribe(
       data => {
         this.projects = data;
@@ -36,11 +46,15 @@ export class ListProjectComponent implements OnInit {
   borrar(id: number) {
     this.projectsService.delete(id).subscribe(
       data => {
-
-        this.cargarProyecto();
+        this.toastr.success('Producto Eliminado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.cargarProductos();
       },
       err => {
-
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000, positionClass: 'toast-top-center',
+        });
       }
     );
   }

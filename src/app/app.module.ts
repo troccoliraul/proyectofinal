@@ -11,7 +11,7 @@ import { EditHeaderComponent } from './header/edit-header/edit-header.component'
 import { AddHeaderComponent } from './header/add-header/add-header.component';
 import { ListAboutComponent } from './about/list-about/list-about.component';
 import { EditAboutComponent } from './about/edit-about/edit-about.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddExperienceComponent } from './experience/add-experience/add-experience.component';
@@ -20,12 +20,13 @@ import { ListExperienceComponent } from './experience/list-experience/list-exper
 import { ListHssComponent } from './hss/list-hss/list-hss.component';
 import { AddProjectComponent } from './projects/add-project/add-project.component';
 import { ListProjectComponent } from './projects/list-project/list-project.component';
-import { ListLoginComponent } from './login/list-login/list-login.component';
+import { ListLoginComponent } from './login/list-login/list-login.component';//*
 import { HomeComponent } from './home/home.component';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';//*
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';//*
 import { EditProjectComponent } from './projects/edit-project/edit-project.component';
-
+import { interceptorProvider } from './services/prod-interceptor.service';
+import { RegistroComponent } from './login/registro/registro.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { EditProjectComponent } from './projects/edit-project/edit-project.compo
     ListLoginComponent,
     HomeComponent,
     EditProjectComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,7 @@ import { EditProjectComponent } from './projects/edit-project/edit-project.compo
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

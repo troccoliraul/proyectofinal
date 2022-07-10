@@ -16,6 +16,7 @@ import { ListProjectComponent } from './projects/list-project/list-project.compo
 import { AddProjectComponent } from './projects/add-project/add-project.component';
 import { EditProjectComponent } from './projects/edit-project/edit-project.component'
 import { HomeComponent } from './home/home.component';
+import { RegistroComponent } from './login/registro/registro.component';
 
 
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path: 'home/listproject', component: ListProjectComponent},
   {path: 'home/addproject', component: AddProjectComponent},
   {path: 'home/editproject/:id', component: EditProjectComponent},
-  {path: '**', redirectTo: 'login', pathMatch: 'full'}
+  {path: 'registro', component: RegistroComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({

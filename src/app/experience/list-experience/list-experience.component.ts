@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
-import { Experience } from 'src/app/models/experience/experience.module'
-import { ExperienceService } from 'src/app/services/experience.service'
+import { Experience } from 'src/app/models/experience/experience.module';
+import { ExperienceService } from 'src/app/services/experience.service';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-list-experience',
@@ -12,17 +13,26 @@ import { ExperienceService } from 'src/app/services/experience.service'
 export class ListExperienceComponent implements OnInit {
 
   experiences: Experience[] = [];
+  roles: string[];
+  isAdmin = false;
 
   constructor(
     private experienceService: ExperienceService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit() {
-    this.cargarExperince();
+    this.cargarProductos();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
-  cargarExperince(): void {
+  cargarProductos(): void {
     this.experienceService.lista().subscribe(
       data => {
         this.experiences = data;
@@ -36,11 +46,15 @@ export class ListExperienceComponent implements OnInit {
   borrar(id: number) {
     this.experienceService.delete(id).subscribe(
       data => {
-
-        this.cargarExperince();
+        this.toastr.success('Producto Eliminado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.cargarProductos();
       },
       err => {
-
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000, positionClass: 'toast-top-center',
+        });
       }
     );
   }
