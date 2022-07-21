@@ -4,6 +4,7 @@ import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { NuevoUsuario } from '../../models/nuevo-usuario';
 import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -12,6 +13,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegistroComponent implements OnInit {
 
+  form : FormGroup;
+  error : String="";
   nuevoUsuario: NuevoUsuario;
   nombre: string;
   nombreUsuario: string;
@@ -21,6 +24,7 @@ export class RegistroComponent implements OnInit {
   isLogged = false;
 
   constructor(
+    private formBuilder :FormBuilder,
     private tokenService: TokenService,
     private loginService: LoginService,
     private router: Router,
@@ -28,10 +32,38 @@ export class RegistroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      email : ['',[Validators.required,  Validators.email]],
+      nombreUsuario : ['',[Validators.required, Validators.minLength(4)]],
+      nombre : ['',[Validators.required, Validators.minLength(4)]],
+      password : ['', [Validators.required, Validators.minLength(4)]],
+     });
+
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     }
+
   }
+
+  get Email ()
+    {
+       return this.form.get('email');
+    }
+
+  get Password ()
+    {
+     return this.form.get('password');
+    }
+
+  get Nombre ()
+    {
+     return this.form.get('nombre');
+    }
+
+  get NombreUsuario ()
+    {
+     return this.form.get('nombreUsuario');
+    }
 
   onRegister(): void {
     this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario, this.email, this.password);

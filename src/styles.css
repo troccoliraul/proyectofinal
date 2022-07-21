@@ -12,10 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .derecha {
   float: right;
 }
-body{
-  background: #f7f7ff;
-  margin-top:20px;
-}
+
 .card {
   position: relative;
   display: flex;

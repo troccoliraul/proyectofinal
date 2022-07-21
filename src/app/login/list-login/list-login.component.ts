@@ -34,9 +34,7 @@ export class ListLoginComponent implements OnInit {
     ) {
      this.form = this.formBuilder.group({
       nombreUsuario : ['',[Validators.required]],//, Validators.email]],
-       password : ['', [Validators.required, Validators.minLength(4)]],
-
-
+      password : ['', [Validators.required, Validators.minLength(4)]],
      });
    }
 
