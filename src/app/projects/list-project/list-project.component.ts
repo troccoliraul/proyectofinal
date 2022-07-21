@@ -59,7 +59,7 @@ export class ListProjectComponent implements OnInit {
     );
   }
 
-  alert(){
+  alert(id: number){
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -82,7 +82,7 @@ export class ListProjectComponent implements OnInit {
           'Deleted!',
           'Your file has been deleted.',
           'success'
-        )
+        ) ;this.borrar(id)
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel

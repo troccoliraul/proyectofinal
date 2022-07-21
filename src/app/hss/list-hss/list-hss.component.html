@@ -1,29 +1,33 @@
-<div class="row">
-  <div class="col-sm-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="d-flex align-items-center mb-3">Project Status</h5>
-        <p>Web Design</p>
-        <div class="progress mb-3" style="height: 5px">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <p>Website Markup</p>
-        <div class="progress mb-3" style="height: 5px">
-          <div class="progress-bar bg-danger" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <p>One Page</p>
-        <div class="progress mb-3" style="height: 5px">
-          <div class="progress-bar bg-success" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <p>Mobile Template</p>
-        <div class="progress mb-3" style="height: 5px">
-          <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <p>Backend API</p>
-        <div class="progress" style="height: 5px">
-          <div class="progress-bar bg-info" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      </div>
+<div class="add">
+    <h2>Habilidades</h2>
+<div class="" *ngIf="isAdmin">
+  <a class="btn btn-sm btn-outline-secondary"  routerLink="/home/addhss"><i class="bi bi-file-earmark-plus"></i></a>
+</div>
+</div>
+<div class="add">
+  <mat-card class="mat-elevation-z4" *ngFor="let hss of hsss">
+    <mat-card-header>
+      <mat-card-title>{{hss.title}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="main-div">
+      <div>
+      <mat-spinner mode="determinate" [value]= hss.percent></mat-spinner>
+      <div style="position:relative; top: -60px; left: 30px;">{{hss.percent}} %</div>
     </div>
-  </div>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <p class="text">
+        {{hss.subtitle}}
+      </p>
+
+    <mat-card-actions
+    *ngIf="isAdmin"
+    >
+      <button mat-button routerLink="/home/edithss/{{hss.id}}">Editar</button>
+      <button mat-button (click)="alert(hss.id)">Eliminar</button>
+    </mat-card-actions>
+  </mat-card-footer>
+  </mat-card>
 </div>

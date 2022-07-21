@@ -20,7 +20,7 @@
 
           <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="editproject/{{project.id}}"><i class="bi bi-pencil-fill"></i></button></td>
 
-          <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="alert()"><i class="bi bi-trash3-fill"></i></button></td>
+          <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="alert(project.id)"><i class="bi bi-trash3-fill"></i></button></td>
 
         </tr>
 

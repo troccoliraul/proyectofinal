@@ -1,0 +1,26 @@
+<div class="row mt-5">
+  <div class="col-md-4 mx-auto">
+    <h1>
+      Aptitudes - Conocimientos
+    </h1>
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+          <div class="form-group">
+              <label for="title">Habilidad</label>
+              <input type="text" class="form-control" id="title" name="title"
+              [(ngModel)]="title" required>
+          </div>
+          <div class="form-group">
+              <label for="percent">Porcentaje</label>
+              <input type="text" class="form-control" id="percent" name="percent"
+              [(ngModel)]="percent" required>
+          </div>
+          <div class="form-group">
+              <label for="subtitle">Descripcion</label>
+              <input type="text" class="form-control" id="subtitle" name="subtitle"
+              [(ngModel)]="subtitle" required>
+          </div>
+          <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+          <button type="button" class="btn btn-secondary" routerLink="/home">Close</button>
+        </form>
+  </div>
+</div>

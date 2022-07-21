@@ -5,9 +5,9 @@
     <div class="up">
       <div class="media align-items-end ">
           <div class="profile mr-3 profile-head">
-            <img src={{about.url_foto}} alt="..." width="130" class="rounded mb-2 img-thumbnail">
+            <img src={{about.url_foto}} alt="100" width="200" class="rounded mb-2 img-thumbnail">
             <div class="media-body mb-5 text-white">
-              <h4 class="mt-0 mb-0 color">{{about.apellido}} {{about.nombre}}</h4>
+              <h2 class="mt-0 mb-0 color">{{about.apellido}} {{about.nombre}}</h2>
             </div>
        </div>
     </div>
@@ -15,7 +15,7 @@
       <button class="btn btn-outline-warning" routerLink="editabout/{{about.id}}"><i class="bi bi-pencil-fill"></i></button>
     </div>
         <div class="px-4 py-3">
-            <h5 class="mb-0">Mis Datos:</h5>
+            <h3 class="mb-0">Mis Datos:</h3>
               <div class="p-4 rounded shadow-sm bg-light">
                 <p class="font-italic mb-0">Domicilio: {{about.domicilio}}</p>
                 <p class="font-italic mb-0">Fecha de Nacimiento: {{about.fecha_nacimiento}}</p>
@@ -25,7 +25,7 @@
               </div>
         </div>
         <div class="px-4 py-3">
-          <h5 class="mb-0">Sobre Mi:</h5>
+          <h3 class="mb-0">Sobre Mi:</h3>
           <div class="p-4 rounded shadow-sm bg-light">
                 <p class="font-italic mb-0">{{about.sobre_mi}}</p>
           </div>

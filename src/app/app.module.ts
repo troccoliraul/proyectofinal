@@ -27,6 +27,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';/
 import { EditProjectComponent } from './projects/edit-project/edit-project.component';
 import { interceptorProvider } from './services/prod-interceptor.service';
 import { RegistroComponent } from './login/registro/registro.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButton, MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIcon, MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { HssNewComponent } from './hss/hss-new/hss-new.component';
+import { HssEditComponent } from './hss/hss-edit/hss-edit.component';
+
 
 
 @NgModule({
@@ -50,6 +64,8 @@ import { RegistroComponent } from './login/registro/registro.component';
     HomeComponent,
     EditProjectComponent,
     RegistroComponent,
+    HssNewComponent,
+    HssEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +75,17 @@ import { RegistroComponent } from './login/registro/registro.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    MatSliderModule,
+    MatCardModule,
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    MatFormFieldModule,
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

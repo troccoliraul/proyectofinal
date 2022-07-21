@@ -17,6 +17,8 @@ import { AddProjectComponent } from './projects/add-project/add-project.componen
 import { EditProjectComponent } from './projects/edit-project/edit-project.component'
 import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './login/registro/registro.component';
+import { HssEditComponent } from './hss/hss-edit/hss-edit.component';
+import { HssNewComponent } from './hss/hss-new/hss-new.component';
 
 
 
@@ -34,6 +36,8 @@ const routes: Routes = [
   {path: 'home/listexperience', component: ListExperienceComponent},
   {path: 'home/listheader', component: ListHeaderComponent},
   {path: 'home/listhss', component: ListHssComponent},
+  {path: 'home/edithss/:id', component: HssEditComponent},
+  {path: 'home/addhss', component: HssNewComponent},
   {path: 'login', component: ListLoginComponent},
   {path: 'home/listproject', component: ListProjectComponent},
   {path: 'home/addproject', component: AddProjectComponent},

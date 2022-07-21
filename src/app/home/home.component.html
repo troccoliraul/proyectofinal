@@ -1,5 +1,7 @@
-<div class="container"><div>
-  <app-list-header></app-list-header></div>
+<div class="container">
+  <div>
+    <app-list-header></app-list-header>
+  </div>
 
   <div>
     <app-list-about></app-list-about>
@@ -8,7 +10,7 @@
 
   <div class="bg-white shadow rounded overflow-hidden">
     <div _ngcontent-mee-c50="" class="add">
-      <h3 _ngcontent-mee-c50="" class="mb-0">Education</h3>
+      <h2 _ngcontent-mee-c50="" class="mb-0">Education</h2>
       <div class="derecha" *ngIf="isAdmin">
         <a class="btn btn-sm btn-outline-secondary"  routerLink="/home/addeducation"><i class="bi bi-file-earmark-plus"></i></a>
       </div>
@@ -19,7 +21,7 @@
 
   <div class="bg-white shadow rounded overflow-hidden">
     <div class="add">
-      <h3>Experience</h3>
+      <h2>Experience</h2>
       <div class="derecha" *ngIf="isAdmin">
         <a class="btn btn-sm btn-outline-secondary"  routerLink="/home/addexperience"><i class="bi bi-file-earmark-plus"></i></a>
       </div>
@@ -28,18 +30,20 @@
   </div>
   <br>
 
-  <div>
+  <div class="bg-white shadow rounded overflow-hidden">
     <app-list-hss></app-list-hss>
+    <br>
   </div>
+  <br>
+
 
   <div class="bg-white shadow rounded overflow-hidden">
     <div _ngcontent-mee-c50="" class="add">
-      <h3 _ngcontent-mee-c50="" class="mb-0">Projects</h3>
+      <h2 _ngcontent-mee-c50="" class="mb-0">Projects</h2>
       <div class="derecha" *ngIf="isAdmin">
         <a class="btn btn-sm btn-outline-secondary"  routerLink="/home/addproject"><i class="bi bi-file-earmark-plus"></i></a>
       </div>
     </div>
     <app-list-project></app-list-project>
   </div>
-
 </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { Experience } from 'src/app/models/experience/experience.module'
 import { ExperienceService } from 'src/app/services/experience.service'
 
@@ -19,7 +18,6 @@ export class AddExperienceComponent implements OnInit {
 
   constructor(
     private experienceService: ExperienceService,
-    private toastr: ToastrService,
     private router: Router
   ) { }
 
