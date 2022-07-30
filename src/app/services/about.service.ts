@@ -8,7 +8,7 @@ import { About } from 'src/app/models/about/about.module'
 })
 export class AboutService {
 
-  aboutURL = 'http://localhost:8080/persona/';
+  aboutURL = 'https://arcane-river-72538.herokuapp.com/persona/';
 
   constructor(private httpClient: HttpClient) { }
 

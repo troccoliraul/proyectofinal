@@ -8,7 +8,7 @@ import { Hss } from 'src/app/models/hss';
 })
 export class HssService {
 
-  hssURL = 'http://localhost:8080/hss/';
+  hssURL = 'https://arcane-river-72538.herokuapp.com/hss/';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -9,7 +9,7 @@ import { JwtDTO } from '../models/jwt-dto';
   providedIn: 'root'
 })
 export class LoginService {
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://arcane-river-72538.herokuapp.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
